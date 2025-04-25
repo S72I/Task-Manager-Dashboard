@@ -1,6 +1,5 @@
 import React from "react";
 import Dashboard from "./pages/Dashboard";
-import ResponsiveAppBar from "./components/UI/ResponsiveAppBar";
 import { BrowserRouter, Link, Route, Router, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import {
@@ -12,6 +11,9 @@ import {
   Typography,
 } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
+import Register from "./pages/Register";
+import AddTasks from "./components/Tasks/AddTasks";
+import UpdateTasks from "./components/Tasks/UpdateTasks";
 
 const App = () => {
   const darkTheme = createTheme({
@@ -56,6 +58,8 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Dashboard />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/updateTasks/:_id" element={<UpdateTasks />} />
         </Routes>
       </BrowserRouter>
     </>
